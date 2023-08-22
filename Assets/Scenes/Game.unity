@@ -125,74 +125,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2483377834311405160, guid: 98d788bdd44244d7c8e8c099985b6ece, type: 3}
   m_PrefabInstance: {fileID: 1830380738247794773}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &665859920
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665859923}
-  - component: {fileID: 665859922}
-  - component: {fileID: 665859921}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &665859921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665859920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &665859922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665859920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &665859923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665859920}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1262460855 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6345411253609344833, guid: d2c656286b7ef44bf98aa4b606faf73c, type: 3}
@@ -302,6 +234,83 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6441537185727972211, guid: 98a0fc4620a8f4a039aaf9f629ff0260, type: 3}
   m_PrefabInstance: {fileID: 2641865887626000815}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1724485690
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724485692}
+  - component: {fileID: 1724485691}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1724485691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724485690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 440bb237163fa4eceb0a3c728fdea013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpeed: 10
+  banana: {fileID: 255623970446582831, guid: 083e32b85b070407586e0004324f2945, type: 3}
+  plasticBottle: {fileID: 3599854389813851727, guid: a525c1f92b35240bc9984710a6ee2623, type: 3}
+  crumpledPaper: {fileID: 5163003360753558656, guid: 698003e1aeeba4c8ab2319695317ec76, type: 3}
+  drop:
+    m_Name: Drop
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c0c3c502-82ff-4777-a82e-7f7418f7c0e5
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 932724ee-269d-4a75-b813-7a9af30292c1
+      m_Path: <Gamepad>/buttonSouth
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Drop
+      m_Flags: 0
+    - m_Name: 
+      m_Id: 38a1517d-de27-4075-b6bd-b7cb686c31d7
+      m_Path: <Mouse>/leftButton
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Drop
+      m_Flags: 0
+    m_Flags: 0
+--- !u!224 &1724485692
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724485690}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -365420.22}
+  m_LocalScale: {x: 55.1, y: 55.1, z: 55.1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1939527899}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 217, y: -50.5}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1817871158
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +501,7 @@ RectTransform:
   - {fileID: 1262460855}
   - {fileID: 1656034691}
   - {fileID: 353869620}
+  - {fileID: 1724485692}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -967,7 +977,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1817871162}
   - {fileID: 1939527899}
-  - {fileID: 665859923}
   - {fileID: 4763895254114877946}
   - {fileID: 4824655093365426260}
   - {fileID: 7260906456885532118}
