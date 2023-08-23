@@ -4,41 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
-using Object = System.Object;
-
-// ReSharper disable Unity.PerformanceCriticalCodeInvocation
 
 public class Spawner : MonoBehaviour
 {
     //Public variables
-    public float itemSpeed = -3f;
-    public GameObject banana;
-    public GameObject plasticBottle;
-    public GameObject crumpledPaper;
+    public GarbageItem banana;
+    public GarbageItem plasticBottle;
+    public GarbageItem crumpledPaper;
     public InputAction dropBanana;
     public InputAction dropFiber;
     public InputAction dropBottle;
     public InputAction startGame;
-    public static Spawner Instance;
     
     //Private variables
     private Vector2 _itemSpawnPosition;
     private readonly Queue<GarbageItem> _fiberItems = new Queue<GarbageItem>();
     private readonly Queue<GarbageItem> _bananaItems = new Queue<GarbageItem>();
     private readonly Queue<GarbageItem> _plasticBottleItems = new Queue<GarbageItem>();
-    
-    
+
+    private float _spawnRate = 2f;
     private GarbageItem _fiberItem;
     private GarbageItem _bananaItem;
     private GarbageItem _plasticBottleItem;
 
     private void Awake()
     {
-        Instance = this;
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
+        GameManager.OnItemSpeedChanged += IncreaseSpawnRate;
     }
-
+    
+    void IncreaseSpawnRate(float newSpeed)
+    {
+        _spawnRate -= .5f;
+    }
     private void GameManagerOnOnGameStateChanged(GameManager.GameState newState)
     {
         switch (newState)
@@ -151,28 +149,28 @@ public class Spawner : MonoBehaviour
         while (GameManager.Instance.state == GameManager.GameState.Playing)
         {
             SpawnItem();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(_spawnRate);
         }
     }
 
     void SpawnItem()
     {
-        int itemSpawnIndex = UnityEngine.Random.Range(1, 3);
+        int itemSpawnIndex = UnityEngine.Random.Range(1, 4);
         GarbageItem spawnedItem;
         
         
         switch (itemSpawnIndex)
         {
             case 1:
-                spawnedItem = Instantiate(banana, _itemSpawnPosition, Quaternion.identity).GetComponent<GarbageItem>();
+                spawnedItem = Instantiate(banana, _itemSpawnPosition, Quaternion.identity);
                 _bananaItems.Enqueue(spawnedItem);
                 break;
             case 2:
-                spawnedItem = Instantiate(plasticBottle, _itemSpawnPosition, Quaternion.identity).GetComponent<GarbageItem>();
+                spawnedItem = Instantiate(plasticBottle, _itemSpawnPosition, Quaternion.identity);
                 _plasticBottleItems.Enqueue(spawnedItem);
                 break;
             case 3:
-                spawnedItem = Instantiate(crumpledPaper, _itemSpawnPosition, Quaternion.identity).GetComponent<GarbageItem>();
+                spawnedItem = Instantiate(crumpledPaper, _itemSpawnPosition, Quaternion.identity);
                 _fiberItems.Enqueue(spawnedItem);
                 break;
             default:

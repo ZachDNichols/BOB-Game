@@ -12,8 +12,14 @@ public class GameManager : MonoBehaviour
     public GameState state;
     
     public TMP_Text scoreText;
+    public GameObject startText;
+    private const float defaultItemSpeed = -2f;
+    private float itemSpeed = defaultItemSpeed;
+    
+    public float CurrentSpeed => itemSpeed;
 
     public static event Action<GameState> OnGameStateChanged;
+    public static event Action<float> OnItemSpeedChanged;
 
     public enum GameState
     {
@@ -34,6 +40,7 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         scoreText = (TMP_Text)GameObject.Find("Score").GetComponent(typeof(TMP_Text));
+        startText = GameObject.Find("StartText");
         UpdateGameState(GameState.WaitingToStart);
     }
 
@@ -44,8 +51,11 @@ public class GameManager : MonoBehaviour
         switch (newState)
         {
             case GameState.WaitingToStart:
+                startText.SetActive(true);
+                itemSpeed = defaultItemSpeed;
                 break;
             case GameState.Playing:
+                startText.SetActive(false);
                 _score = 0;
                 break;
             default:
@@ -60,11 +70,10 @@ public class GameManager : MonoBehaviour
         _score++;
         scoreText.text = _score.ToString();
         _successesInRow++;
-        Debug.Log("Successes: " + _successesInRow.ToString() + "\nScore: " + _score.ToString());
         if (_successesInRow >= maxSuccessesInRow)
         {
             _successesInRow = 0;
-            Spawner.Instance.itemSpeed -= 3f;
+            UpdateGameSpeed();
         }
     }
 
@@ -77,6 +86,13 @@ public class GameManager : MonoBehaviour
             _failuresInRow = 0;
             UpdateGameState(GameState.WaitingToStart);
         }
+    }
+
+    public void UpdateGameSpeed()
+    {
+        itemSpeed -= 0.5f;
+        
+        OnItemSpeedChanged?.Invoke(itemSpeed);
     }
     
 }
