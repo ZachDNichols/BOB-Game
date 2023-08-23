@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3686404961344442436}
   - component: {fileID: 8930679420348582884}
   - component: {fileID: 5690610438085188480}
+  - component: {fileID: 7177856661048252066}
   m_Layer: 5
   m_Name: FiberBin
   m_TagString: Untagged
@@ -152,9 +153,62 @@ PolygonCollider2D:
       - {x: -77.08538, y: 109.15143}
       - {x: -69.47233, y: 109.62713}
       - {x: -47.316933, y: -92.27929}
-      - {x: 50.416874, y: -94.39871}
+      - {x: 32.848488, y: -92.12366}
+      - {x: 56.32981, y: -92.427734}
       - {x: 72.32711, y: 105.512505}
       - {x: 81.487305, y: 109.38213}
       - {x: 83.78092, y: 99.55983}
-      - {x: 59.48659, y: -102.64241}
+      - {x: 59.092403, y: -98.70046}
+  m_UseDelaunayMesh: 0
+--- !u!60 &7177856661048252066
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3216356076132059168}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -50.494823, y: -60.643017}
+      - {x: 2.6557045, y: -67.56387}
+      - {x: 59.415802, y: -57.53372}
+      - {x: 55.673058, y: -92.61781}
+      - {x: -47.24856, y: -92.15552}
   m_UseDelaunayMesh: 0
