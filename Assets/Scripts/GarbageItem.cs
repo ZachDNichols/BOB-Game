@@ -27,13 +27,12 @@ public class GarbageItem : MonoBehaviour
         _rigidbody2D.isKinematic = true;
         _rigidbody2D.velocityX = _itemSpeed;
         _collider2D = GetComponent<PolygonCollider2D>();
-        _collider2D.isTrigger = true;
         GameManager.OnItemSpeedChanged += ChangeSpeed;
+        StartCoroutine(DestroyAfterSeconds());
     }
 
     public void Drop()
     {
-        _collider2D.isTrigger = false;
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.velocityX = 0;
     }
@@ -46,6 +45,7 @@ public class GarbageItem : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         {
+            Debug.Log(other.tag);
             switch (garbageType)
             {
                 case GarbageType.Banana:
@@ -56,6 +56,7 @@ public class GarbageItem : MonoBehaviour
                     else
                     {
                         GameManager.Instance.Failure();
+                        Instantiate(xMarker, transform.position, Quaternion.identity);
                     }
                     Destroy(gameObject);
                     break;
@@ -95,5 +96,11 @@ public class GarbageItem : MonoBehaviour
     private void OnDestroy()
     {
         GameManager.OnItemSpeedChanged -= ChangeSpeed;
+    }
+    
+    IEnumerator DestroyAfterSeconds()
+    {
+        yield return new WaitForSeconds(25);
+        Destroy(gameObject);
     }
 }

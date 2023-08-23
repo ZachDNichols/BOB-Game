@@ -54,6 +54,7 @@ public class Spawner : MonoBehaviour
                 dropFiber.Enable();
                 dropBanana.Enable();
                 startGame.Disable();
+                _spawnRate = 2f;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -74,19 +75,28 @@ public class Spawner : MonoBehaviour
         foreach (var item in _fiberItems)
         {
             GameObject itemGameObject = item.gameObject;
-            Destroy(itemGameObject);
+            if (itemGameObject)
+            {
+                Destroy(itemGameObject);
+            }
         }
 
         foreach (var bananaItem in _bananaItems)
         {
             GameObject bananaGameObject = bananaItem.gameObject;
-            Destroy(bananaGameObject);
+            if (bananaGameObject)
+            {
+                Destroy(bananaGameObject);
+            }
         }
         
         foreach (var plasticBottleItem in _plasticBottleItems)
         {
             GameObject plasticBottleGameObject = plasticBottleItem.gameObject;
-            Destroy(plasticBottleGameObject);
+            if (plasticBottleGameObject)
+            {
+                Destroy(plasticBottleGameObject);
+            }
         }
         
         _bananaItems.Clear();

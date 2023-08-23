@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
             case GameState.Playing:
                 startText.SetActive(false);
                 _score = 0;
+                scoreText.text = _score.ToString();
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
