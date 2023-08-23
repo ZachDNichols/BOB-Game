@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BananaPeel_0: -6539845494953745017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

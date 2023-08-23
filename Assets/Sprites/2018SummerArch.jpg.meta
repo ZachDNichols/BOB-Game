@@ -152,7 +152,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      2018SummerArch_0: -747392941944066357
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
