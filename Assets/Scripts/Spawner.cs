@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     private readonly Queue<GarbageItem> _bananaItems = new Queue<GarbageItem>();
     private readonly Queue<GarbageItem> _plasticBottleItems = new Queue<GarbageItem>();
 
-    private float _spawnRate = 2f;
+    private float _spawnRate = 4f;
     private GarbageItem _fiberItem;
     private GarbageItem _bananaItem;
     private GarbageItem _plasticBottleItem;

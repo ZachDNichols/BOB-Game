@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     
     public TMP_Text scoreText;
     public GameObject startText;
-    private const float defaultItemSpeed = -2f;
+    private const float defaultItemSpeed = -1f;
     private float itemSpeed = defaultItemSpeed;
     
     public float CurrentSpeed => itemSpeed;
