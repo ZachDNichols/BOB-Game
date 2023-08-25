@@ -194,12 +194,23 @@ public class Spawner : MonoBehaviour
         {
             if (_bananaItem == null)
             {
-                if (!_bananaItems.Any())
-                {
-                    return;
-                }
+                bool itemAdded = false;
                 
-                _bananaItem = _bananaItems.Dequeue();
+                while (!itemAdded)
+                {
+                    if (!_bananaItems.Any())
+                    {
+                        return;
+                    }
+                    
+                    _bananaItem = _bananaItems.Dequeue();
+                    
+                    if (_bananaItem is not null)
+                    {
+                        itemAdded = true;
+                    }
+                }
+
                 _bananaItem.Drop();
                 _bananaItem = _bananaItems.Any() ? _bananaItems.Dequeue() : null;
             }
@@ -217,12 +228,23 @@ public class Spawner : MonoBehaviour
         {
             if (_fiberItem == null)
             {
-                if (!_fiberItems.Any())
+                bool itemAdded = false;
+
+                while (!itemAdded)
                 {
-                    return;
+                    if (!_fiberItems.Any())
+                    {
+                        return;
+                    }
+                    
+                    _fiberItem = _fiberItems.Dequeue();
+                    
+                    if (_fiberItem is not null)
+                    {
+                        itemAdded = true;
+                    }
                 }
                 
-                _fiberItem = _fiberItems.Dequeue();
                 _fiberItem.Drop();
                 _fiberItem = _fiberItems.Any() ? _fiberItems.Dequeue() : null;
             }
@@ -240,12 +262,23 @@ public class Spawner : MonoBehaviour
         {
             if (_plasticBottleItem == null)
             {
-                if (!_plasticBottleItems.Any())
-                {
-                    return;
-                }
+                bool itemAdded = false;
                 
-                _plasticBottleItem = _plasticBottleItems.Dequeue();
+                while (!itemAdded)
+                {
+                    if (!_plasticBottleItems.Any())
+                    {
+                        return;
+                    }
+                    
+                    _plasticBottleItem = _plasticBottleItems.Dequeue();
+                    
+                    if (_plasticBottleItem is not null)
+                    {
+                        itemAdded = true;
+                    }
+                }
+
                 _plasticBottleItem.Drop();
                 _plasticBottleItem = _plasticBottleItems.Any() ? _plasticBottleItems.Dequeue() : null;
             }
