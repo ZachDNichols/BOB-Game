@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameSpeed()
     {
-        if (itemSpeed - 0.25f < -7f)
+        if (itemSpeed - 0.25f < -6f)
         {
             return;
         }

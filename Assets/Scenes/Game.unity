@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 240160925}
   - component: {fileID: 240160924}
   m_Layer: 5
-  m_Name: AButton
+  m_Name: XButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,7 +177,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5901877822842535218, guid: ed8b197756d564c26a1626423412a392, type: 3}
+  m_Sprite: {fileID: 7228479579958016333, guid: 30209c1095e9e41b699e346fd60fd4c6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 1293202554}
   - component: {fileID: 1293202553}
   m_Layer: 5
-  m_Name: XButton
+  m_Name: AButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,7 +383,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 120.12897, y: -60}
+  m_AnchoredPosition: {x: 114.9, y: -60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1293202553
@@ -406,7 +406,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7228479579958016333, guid: 30209c1095e9e41b699e346fd60fd4c6, type: 3}
+  m_Sprite: {fileID: -5901877822842535218, guid: ed8b197756d564c26a1626423412a392, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 1429485183}
   - component: {fileID: 1429485182}
   m_Layer: 5
-  m_Name: YButton
+  m_Name: BButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -481,7 +481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -8653401644121117972, guid: b650ced44e3464215aea5a10740ee88f, type: 3}
+  m_Sprite: {fileID: -2465423743124807641, guid: 64d08eeea68dc4bf3b7e713917dd5f79, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -848,7 +848,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 238.81897, y: -60}
+  m_AnchoredPosition: {x: 154.5, y: -60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612378948
@@ -1139,7 +1139,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: a2050240-7456-4d02-a086-c8e749978485
-      m_Path: <Gamepad>/buttonSouth
+      m_Path: <Gamepad>/buttonWest
       m_Interactions: Press
       m_Processors: 
       m_Groups: 
@@ -1164,7 +1164,7 @@ MonoBehaviour:
       m_Flags: 0
     - m_Name: 
       m_Id: efc915fe-8c64-4c72-a48a-aa1512c52493
-      m_Path: <Gamepad>/buttonNorth
+      m_Path: <Gamepad>/buttonSouth
       m_Interactions: Press
       m_Processors: 
       m_Groups: 
@@ -1502,7 +1502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 156.32898, y: -60}
+  m_AnchoredPosition: {x: 231.93, y: -60}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911092131
