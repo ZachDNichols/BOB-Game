@@ -29,6 +29,7 @@ public class GarbageItem : MonoBehaviour
 
     public void Drop()
     {
+        GameManager.OnItemSpeedChanged -= ChangeSpeed;
         _rigidbody2D.isKinematic = false;
         _rigidbody2D.velocityX = 0;
     }

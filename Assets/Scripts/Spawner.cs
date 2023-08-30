@@ -31,6 +31,7 @@ public class Spawner : MonoBehaviour
     {
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
         GameManager.OnItemSpeedChanged += IncreaseSpawnRate;
+        _spawnRate = 4f;
     }
     
     void IncreaseSpawnRate(float newSpeed)
@@ -64,44 +65,17 @@ public class Spawner : MonoBehaviour
     private void CleanUpSpawnedItems()
     {
         var otherItems = FindObjectsByType<GarbageItem>(FindObjectsSortMode.None);
-
-        foreach (var otherItem in otherItems)
-        {
-            _fiberItems.Enqueue(otherItem);
-            _bananaItems.Enqueue(otherItem);
-            _plasticBottleItems.Enqueue(otherItem);
-        }
-        
-        foreach (var item in _fiberItems)
-        {
-            GameObject itemGameObject = item.gameObject;
-            if (itemGameObject)
-            {
-                Destroy(itemGameObject);
-            }
-        }
-
-        foreach (var bananaItem in _bananaItems)
-        {
-            GameObject bananaGameObject = bananaItem.gameObject;
-            if (bananaGameObject)
-            {
-                Destroy(bananaGameObject);
-            }
-        }
-        
-        foreach (var plasticBottleItem in _plasticBottleItems)
-        {
-            GameObject plasticBottleGameObject = plasticBottleItem.gameObject;
-            if (plasticBottleGameObject)
-            {
-                Destroy(plasticBottleGameObject);
-            }
-        }
-        
+        _fiberItems.Clear();
         _bananaItems.Clear();
         _plasticBottleItems.Clear();
-        _fiberItems.Clear();
+        
+        foreach (var item in otherItems ?? Enumerable.Empty<GarbageItem>())
+        {
+            if (item is not null)
+            {
+                Destroy(item.gameObject);
+            }
+        }
     }
     
     // Start is called before the first frame update

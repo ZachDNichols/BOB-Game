@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
         scoreText = (TMP_Text)GameObject.Find("Score").GetComponent(typeof(TMP_Text));
         startText = GameObject.Find("StartText");
+        itemSpeed = defaultItemSpeed;
+        OnItemSpeedChanged.Invoke(itemSpeed);
         UpdateGameState(GameState.WaitingToStart);
     }
 

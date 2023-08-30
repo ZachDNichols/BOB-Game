@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1584956108444715518}
   - component: {fileID: 2961065237402978240}
   - component: {fileID: -5350707662623564939}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BananaPeel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ PolygonCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 1e6cb4d714d584aae9824d91b3bb7f95, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -579,7 +579,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 1e6cb4d714d584aae9824d91b3bb7f95, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -588,7 +588,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &-5350707662623564939
 MonoBehaviour:
