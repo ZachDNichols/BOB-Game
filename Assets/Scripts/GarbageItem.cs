@@ -42,7 +42,7 @@ public class GarbageItem : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         {
-            Debug.Log(other.tag);
+           //Debug.Log(other.tag);
             switch (garbageType)
             {
                 case GarbageType.Banana:

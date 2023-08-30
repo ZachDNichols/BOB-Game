@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
     public void Failure()
     {
         _failuresInRow++;
-        Debug.Log("Failures: " + _failuresInRow.ToString());
+        //Debug.Log("Failures: " + _failuresInRow.ToString());
         if (_failuresInRow >= maxFailuresInRow)
         {
             _failuresInRow = 0;
@@ -90,9 +90,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGameSpeed()
     {
-        itemSpeed -= 0.5f;
-        
+        if (itemSpeed - 0.25f < -7f)
+        {
+            return;
+        }
+        itemSpeed -= 0.25f;
         OnItemSpeedChanged?.Invoke(itemSpeed);
     }
-    
 }

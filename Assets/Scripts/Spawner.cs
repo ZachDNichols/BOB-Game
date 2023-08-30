@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     private readonly Queue<GarbageItem> _bananaItems = new Queue<GarbageItem>();
     private readonly Queue<GarbageItem> _plasticBottleItems = new Queue<GarbageItem>();
 
-    private float _spawnRate = 4f;
+    private float _spawnRate = 2.5f;
     private GarbageItem _fiberItem;
     private GarbageItem _bananaItem;
     private GarbageItem _plasticBottleItem;
@@ -31,12 +31,15 @@ public class Spawner : MonoBehaviour
     {
         GameManager.OnGameStateChanged += GameManagerOnOnGameStateChanged;
         GameManager.OnItemSpeedChanged += IncreaseSpawnRate;
-        _spawnRate = 4f;
+        _spawnRate = 2.5f;
     }
     
     void IncreaseSpawnRate(float newSpeed)
     {
-        _spawnRate -= .5f;
+        if (_spawnRate > .5f)
+        {
+            _spawnRate -= .25f;
+        }
     }
     private void GameManagerOnOnGameStateChanged(GameManager.GameState newState)
     {
@@ -55,7 +58,7 @@ public class Spawner : MonoBehaviour
                 dropFiber.Enable();
                 dropBanana.Enable();
                 startGame.Disable();
-                _spawnRate = 2f;
+                _spawnRate = 2.5f;
                 break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(newState), newState, null);
@@ -111,7 +114,7 @@ public class Spawner : MonoBehaviour
 
     void StartGame(InputAction.CallbackContext context)
     {
-        Debug.Log("Start");
+        //Debug.Log("Start");
         if (GameManager.Instance.state == GameManager.GameState.WaitingToStart)
         {
             GameManager.Instance.UpdateGameState(GameManager.GameState.Playing);
